@@ -10,14 +10,24 @@ const timeImg = document.getElementById('time-img');
 climateInput.addEventListener('change', (e) => {
     const value = e.target.value;
     climateImg.src = `./assets/${value}-climate.png`;
+    // check if the placeholder element exists, and if it does, remove it
+    if (document.querySelector('#climate-input option[value=placeholder]')) {
+        document.querySelector('#climate-input option[value=placeholder]').remove();
+    }
 });
 architectureInput.addEventListener('change', (e) => {
     const value = e.target.value;
     architectureImg.src = `./assets/${value}-architecture.png`;
+    if (document.querySelector('#architecture-input option[value=placeholder]')) {
+        document.querySelector('#architecture-input option[value=placeholder]').remove();
+    }
 });
 timeInput.addEventListener('change', (e) => {
     const value = e.target.value;
     timeImg.src = `./assets/${value}-time.png`;
+    if (document.querySelector('#time-input option[value=placeholder]')) {
+        document.querySelector('#time-input option[value=placeholder]').remove();
+    }
 });
 
 // update image function
