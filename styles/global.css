@@ -33,3 +33,8 @@ header .logo {
 main {
     padding: 20px;
 }
+
+.picked-image {
+    height: 200px;
+    width: 200px;
+}
