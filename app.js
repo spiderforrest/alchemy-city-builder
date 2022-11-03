@@ -1,12 +1,13 @@
 // grab elements/generate vars
-const climateInput = document.getElementsById('climate-input');
-const architectureInput = document.getElementsById('architecture-input');
-const timeInput = document.getElementsById('time-input');
-const climateImg = document.getElementsById('climate-img');
-const architectureImg = document.getElementsById('architecture-img');
-const timeImg = document.getElementsById('time-img');
+const climateInput = document.getElementById('climate-input');
+const architectureInput = document.getElementById('architecture-input');
+const timeInput = document.getElementById('time-input');
+const climateImg = document.getElementById('climate-img');
+const architectureImg = document.getElementById('architecture-img');
+const timeImg = document.getElementById('time-img');
 
 // event listeners for image changes
+climateInput.addEventListener('change', () => {});
 
 // update image function
 
