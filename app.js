@@ -7,7 +7,10 @@ const architectureImg = document.getElementById('architecture-img');
 const timeImg = document.getElementById('time-img');
 
 // event listeners for image changes
-climateInput.addEventListener('change', () => {});
+climateInput.addEventListener('change', (e) => {
+    const value = e.target.value;
+    climateImg.src = `./assets/${value}-climate.png`;
+});
 
 // update image function
 
