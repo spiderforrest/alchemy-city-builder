@@ -11,6 +11,14 @@ climateInput.addEventListener('change', (e) => {
     const value = e.target.value;
     climateImg.src = `./assets/${value}-climate.png`;
 });
+architectureInput.addEventListener('change', (e) => {
+    const value = e.target.value;
+    architectureImg.src = `./assets/${value}-architecture.png`;
+});
+timeInput.addEventListener('change', (e) => {
+    const value = e.target.value;
+    timeImg.src = `./assets/${value}-time.png`;
+});
 
 // update image function
 
