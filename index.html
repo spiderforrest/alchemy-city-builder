@@ -29,38 +29,43 @@
 
         <main>
             <section id="img-section">
-                <div id="climate">
-                    <select id="climate-input">
-                        <option value="placeholder">Change Me!</option>
-                        <option value="tropical">Tropical</option>
-                        <option value="desert">Desert</option>
-                        <option value="forest">Forest</option>
-                    </select>
-                    <img id="climate-img" class="picked-image" src="./assets/placeholder.png"/>
-                </div>
-                <div id="architecture">
+                <div class="user-pics" id="architecture">
                     <select id="architecture-input">
                         <option value="placeholder">Change Me!</option>
                         <option value="brutalist">Brutalist</option>
                         <option value="gothic">Gothic</option>
                         <option value="minimalist">Minimalist</option>
                     </select>
-                    <img id="architecture-img" class="picked-image" src="./assets/placeholder.png"/>
+                    <img
+                        id="architecture-img"
+                        class="picked-image"
+                        src="./assets/placeholder.png"
+                    />
                 </div>
-                <div id="time">
+                <div class="user-pics" id="climate">
+                    <select id="climate-input">
+                        <option value="placeholder">Change Me!</option>
+                        <option value="tropical">Tropical</option>
+                        <option value="desert">Desert</option>
+                        <option value="forest">Forest</option>
+                    </select>
+                    <img id="climate-img" class="picked-image" src="./assets/placeholder.png" />
+                </div>
+                <div class="user-pics" id="time">
                     <select id="time-input">
                         <option value="placeholder">Change Me!</option>
                         <option value="before">Before</option>
                         <option value="now">Now</option>
                         <option value="later">Later</option>
                     </select>
-                    <img id="time-img" class="picked-image" src="./assets/placeholder.png"/>
+                    <img id="time-img" class="picked-image" src="./assets/placeholder.png" />
                 </div>
+            </section>
+            <h2>What's your city's slogan?!</h2>
             <section id="slogan-section">
-                <input type="text" id="input-box">
+                <input type="text" id="input-box" />
                 <button id="submit-button">Submit</button>
-                <div id="slogan-display">
-                </div>
+                <div id="slogan-display"></div>
             </section>
             <section id="changes-section">
                 <p id="changes-string"></p>
