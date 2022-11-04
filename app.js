@@ -8,7 +8,9 @@ const timeImg = document.getElementById('time-img');
 const submitButton = document.getElementById('submit-button');
 const inputBox = document.getElementById('input-box');
 const sloganDisplay = document.getElementById('slogan-display');
-const changesString = document.getElementById('changes-string');
+const changesArchitecture = document.getElementById('changes-architecture');
+const changesClimate = document.getElementById('changes-climate');
+const changesTime = document.getElementById('changes-time');
 const sloganArray = [];
 let climateChanges = 0;
 let architectureChanges = 0;
@@ -45,12 +47,26 @@ timeInput.addEventListener('change', (e) => {
 });
 
 function updateCounters() {
-    if (climateChanges > 0) {
-        changesString.textContent = `You changed the climate ${climateChanges} times(you monster). You changed the architecture ${architectureChanges} times. You changed the time period ${timeChanges} times.`;
+    if (architectureChanges === 1) {
+        changesArchitecture.textContent = `You changed the architecture ${architectureChanges} time.`;
     } else {
-        changesString.textContent = `You changed the climate ${climateChanges} times. You changed the architecture ${architectureChanges} times. You changed the time period ${timeChanges} times.`;
+        changesArchitecture.textContent = `You changed the architecture ${architectureChanges} times.`;
+    }
+
+    if (climateChanges === 0) {
+        changesClimate.textContent = `You changed the climate 0 times.`;
+    } else if (climateChanges === 1) {
+        changesClimate.textContent = `You changed the climate 1 time.`;
+    } else {
+        changesClimate.textContent = `You changed the climate ${climateChanges} times (you monster).`;
+    }
+    if (timeChanges === 1) {
+        changesTime.textContent = `You changed the time period ${timeChanges} time.`;
+    } else {
+        changesTime.textContent = `You changed the time period ${timeChanges} times.`;
     }
 }
+updateCounters();
 
 // event listener for submit button
 submitButton.addEventListener('click', () => {
