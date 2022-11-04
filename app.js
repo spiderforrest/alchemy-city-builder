@@ -6,9 +6,13 @@ const climateImg = document.getElementById('climate-img');
 const architectureImg = document.getElementById('architecture-img');
 const timeImg = document.getElementById('time-img');
 const submitButton = document.getElementById('submit-button');
-const sloganDisplay = document.getElementById('slogan-display');
-const sloganArray = [];
 const inputBox = document.getElementById('input-box');
+const sloganDisplay = document.getElementById('slogan-display');
+const changesString = document.getElementById('changes-string');
+const sloganArray = [];
+let climateChanges = 0;
+let architectureChanges = 0;
+let timeChanges = 0;
 
 // event listeners for image changes
 climateInput.addEventListener('change', (e) => {
@@ -18,6 +22,8 @@ climateInput.addEventListener('change', (e) => {
     if (document.querySelector('#climate-input option[value=placeholder]')) {
         document.querySelector('#climate-input option[value=placeholder]').remove();
     }
+    climateChanges++;
+    updateCounters();
 });
 architectureInput.addEventListener('change', (e) => {
     const value = e.target.value;
@@ -25,6 +31,8 @@ architectureInput.addEventListener('change', (e) => {
     if (document.querySelector('#architecture-input option[value=placeholder]')) {
         document.querySelector('#architecture-input option[value=placeholder]').remove();
     }
+    architectureChanges++;
+    updateCounters();
 });
 timeInput.addEventListener('change', (e) => {
     const value = e.target.value;
@@ -32,14 +40,24 @@ timeInput.addEventListener('change', (e) => {
     if (document.querySelector('#time-input option[value=placeholder]')) {
         document.querySelector('#time-input option[value=placeholder]').remove();
     }
+    timeChanges++;
+    updateCounters();
 });
+
+function updateCounters() {
+    if (climateChanges > 0) {
+        changesString.textContent = `You changed the climate ${climateChanges} times(you monster). You changed the architecture ${architectureChanges} times. You changed the time period ${timeChanges} times.`;
+    } else {
+        changesString.textContent = `You changed the climate ${climateChanges} times. You changed the architecture ${architectureChanges} times. You changed the time period ${timeChanges} times.`;
+    }
+}
 
 // event listener for submit button
 submitButton.addEventListener('click', () => {
     sloganDisplay.textContent = '';
     const userInput = inputBox.value;
     sloganArray.push(userInput);
-    for (let item of sloganArray) {
+    for (const item of sloganArray) {
         const newElement = document.createElement('p');
         newElement.textContent = item;
         sloganDisplay.append(newElement);
